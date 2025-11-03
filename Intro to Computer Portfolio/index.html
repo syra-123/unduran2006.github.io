@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #000000, #001f3f, #2b0000);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h3 {
+      color: white;
+    }
+
+    header {
+      background: #111;
+      padding: 10px 20px;
+    }
+    .logo {
+      font-size: 24px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .menu-toggle {
+      display: none;
+    }
+
+    .hero-content {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .cursor {
+      display: inline-block;
+      color: #00ffff;
+      font-weight: bold;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .contact-info p,
+    .hero-contact p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
+    }
+    .contact-info img,
+    .hero-contact img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    .btn {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 50px 20px;
+    }
+    .centered {
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .skills-grid img {
+      width: 2in;
+      height: 2in;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .skills-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #111;
+      color: white;
+    }
+
+    .image-popup {
+      display: none;
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .image-popup img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .popup-arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 2rem;
+      color: white;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transform: translateY(-50%);
+      padding: 10px;
+    }
+    #prevBtn { left: 20px; }
+    #nextBtn { right: 20px; }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: auto;
+      gap: 40px;
+    }
+
+    .project-card {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+    .projects-grid img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .projects-grid img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1 class="logo">MyPortfolio</h1>
+      <nav id="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="navToggle">☰</div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content centered">
+      <img src="c:\Users\Syra Unduran\Downloads\Gemini_Generated_Image_6wk1as6wk1as6wk1.png" alt="Profile Picture" class="profile-pic" />
+      <h2>Hello, I’m <span class="highlight">Syra Unduran</span></h2>
+      <h3><span id="typed-text"></span><span class="cursor">|</span></h3>
+
+      <!-- ✅ Added Social Icons (24px) -->
+      <div class="hero-contact centered">
+        <a href="https://www.facebook.com/sysy200611" target="_blank">
+          <img src="c:\Users\Syra Unduran\Downloads\facebook_logo_icon_147291.png" alt="Facebook" width="24" height="24">
+        </a>
+        <a href="mailto:unduransyra@gmail.com">
+          <img src="c:\Users\Syra Unduran\Downloads\1490889681-email_82528.png" alt="Email" width="24" height="24">
+        </a>
+        <a href="https://github.com/" target="_blank">
+          <img src="c:\Users\Syra Unduran\Downloads\github_logo_icon_147285.png" alt="GitHub" width="24" height="24">
+        </a>
+      </div>
+      <!-- ✅ End of Social Icons -->
+
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about" class="about section">
+    <div class="container centered">
+      <h2>About Me</h2>
+      <p>
+        I am Syra Unduran, a dedicated student passionate about technology and continuous learning. My background in Information and Communication Technology (ICT) has helped me develop skills in web development, data management, and digital communication. Through my work immersion, I gained valuable experience in teamwork and professionalism. I aspire to build a successful career in the IT industry, where I can apply my skills to create innovative solutions. With determination and a positive mindset, I strive to grow both personally and professionally.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="skills section">
+    <div class="container centered">
+      <h2>EXPERIENCE</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img src="c:\Users\Syra Unduran\Downloads\093d49b2-d2c2-4690-8486-c9c2f9460ae1.jpg" alt="Data Encoding" />
+          <p>Data Encoding</p>
+        </div>
+        <div class="skill-card">
+          <img src="c:\Users\Syra Unduran\Downloads\ebe2d16e-eb1b-46a9-9258-8ef9e1a759e2.jpg" alt="Computing & Listing Data" />
+          <p>Computing & Listing Data</p>
+        </div>
+        <div class="skill-card">
+          <img src="c:\Users\Syra Unduran\Downloads\a7bf3180-8911-4623-b18c-12b147fb05c9.jpg" alt="Fixing PC" />
+          <p>Fixing PC</p>
+        </div>
+
+        <div class="skill-card">
+          <img src="c:\Users\Syra Unduran\Downloads\53d4c57e-c0a4-4865-afdb-d7e43829def3.jpg" alt="New Experience 1" style="width:1in; height:1in; border-radius:8px; margin:5px;">
+          <img src="c:\Users\Syra Unduran\Downloads\618f56b0-75ee-44bb-97e9-af978e4e5ffb.jpg" alt="New Experience 2" style="width:1in; height:1in; border-radius:8px; margin:5px;">
+          <img src="c:\Users\Syra Unduran\Downloads\31c7b8b0-aca0-4c44-8364-4f76f2debe85.jpg" alt="New Experience 3" style="width:1in; height:1in; border-radius:8px; margin:5px;">
+          <img src="c:\Users\Syra Unduran\Downloads\e752bd4e-cc20-470b-b678-dc789fd89802.jpg" alt="New Experience 4" style="width:1in; height:1in; border-radius:8px; margin:5px;">
+          <img src="c:\Users\Syra Unduran\Downloads\2c3feca3-590e-4a93-be04-e942cb42ad3f.jpg" alt="New Experience 5" style="width:1in; height:1in; border-radius:8px; margin:5px;">
+          <img src="c:\Users\Syra Unduran\Downloads\9b8a2ed0-a0e6-4ca3-9e3d-309284862232.jpg" alt="New Experience 6" style="width:1in; height:1in; border-radius:8px; margin:5px;">
+          <p></p>
+        </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact section">
+    <div class="container centered">
+      <h2>Contact Me</h2>
+      <div class="contact-info centered">
+        <p>
+          <img src="c:\Users\Syra Unduran\Downloads\facebook_logo_icon_147291.png" alt="Facebook Icon" />
+          <strong>Facebook:</strong>
+          <a href="https://www.facebook.com/sysy200611" target="_blank">facebook.com/sysy200611</a>
+        </p>
+        <p>
+          <img src="c:\Users\Syra Unduran\Downloads\1490889681-email_82528.png" alt="Email Icon" />
+          <strong>Email:</strong>
+          <a href="mailto:unduransyra@gmail.com">unduransyra@gmail.com</a>
+        </p>
+        <p>
+          <img src="c:\Users\Syra Unduran\Downloads\contact_book_contacts_notebook_icon_124667.png" alt="Phone Icon" />
+          <strong>Phone:</strong>
+          <a href="tel:09700484807">09700484807</a>
+        </p>
+      </div>
+
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Syra Unduran. All rights reserved.</p>
+  </footer>
+
+  <div class="image-popup" id="imagePopup">
+    <img src="" alt="Popup Image" id="popupImg">
+    <button id="prevBtn" class="popup-arrow">&#10094;</button>
+    <button id="nextBtn" class="popup-arrow">&#10095;</button>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = "I’m an ICT Student";
+      const typedText = document.getElementById("typed-text");
+      let index = 0, isDeleting = false;
+      function type() {
+        if (!isDeleting) {
+          typedText.textContent = text.slice(0, index++);
+          if (index > text.length) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+          }
+        } else {
+          typedText.textContent = text.slice(0, index--);
+          if (index < 0) {
+            isDeleting = false;
+            index = 0;
+          }
+        }
+        setTimeout(type, isDeleting ? 60 : 100);
+      }
+      type();
+    });
+
+    const popup = document.getElementById('imagePopup');
+    const popupImg = document.getElementById('popupImg');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    const allImages = document.querySelectorAll('.skills-grid img, .projects-grid img');
+    let currentIndex = 0;
+
+    allImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentIndex = index;
+        popupImg.src = img.src;
+        popup.style.display = 'flex';
+      });
+    });
+
+    popup.addEventListener('click', e => {
+      if (e.target === popup) popup.style.display = 'none';
+    });
+
+    prevBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+      popupImg.src = allImages[currentIndex].src;
+    });
+
+    nextBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % allImages.length;
+      popupImg.src = allImages[currentIndex].src;
+    });
+  </script>
+
+</body>
+</html>
